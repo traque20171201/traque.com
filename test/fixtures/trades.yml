@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tradingDate: 2020-04-26
+  tradingType: 1
+  volume: 
+  price: 1
+  money: 
+  fee: 1
+  tax: 1
+  user: one
+  stock: one
+
+two:
+  tradingDate: 2020-04-26
+  tradingType: 1
+  volume: 
+  price: 1
+  money: 
+  fee: 1
+  tax: 1
+  user: two
+  stock: two

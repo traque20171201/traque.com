@@ -1,0 +1,61 @@
+<%= form_with(model: trade, local: true) do |form| %>
+  <% if trade.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(trade.errors.count, "error") %> prohibited this trade from being saved:</h2>
+
+      <ul>
+        <% trade.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group row">
+    <%= form.label :tradingDate, class: "col-md-3 col-form-label font-weight-bold" %>
+    <div class="col-md-9">
+      <%= form.date_field :tradingDate, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :stock_id, class: "col-md-3 col-form-label font-weight-bold" %>
+    <div class="col-md-2">
+      <%= form.select(:stock_id, [], {}, {:class => "form-control"}) do %>
+        <% Stock.all.each do |stock| %>
+          <%= content_tag(:option, stock.code, value: stock.id, title: stock.name) %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-md-7">
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :tradingType, class: "col-md-3 col-form-label font-weight-bold" %>
+    <div class="col-md-2">
+      <%= form.select(:tradingType, [[t('buy'), 1],[t('sell'), 2]], {}, {:class => "form-control"}) %>
+    </div>
+    <div class="col-md-7">
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :volume, class: "col-md-3 col-form-label font-weight-bold" %>
+    <div class="col-md-9">
+      <%= form.text_field :volume, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :price, class: "col-md-3 col-form-label font-weight-bold" %>
+    <div class="col-md-9">
+      <%= form.number_field :price, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+    <%= link_to 'Back', trades_path, class: "btn btn-secondary" %>
+  </div>
+<% end %>

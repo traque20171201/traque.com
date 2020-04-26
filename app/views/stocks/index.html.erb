@@ -1,0 +1,43 @@
+<div class="table-responsive">
+  <h2><%= t('stocksList') %></h2>
+  <table id="stocksListTable" class="table table-bordered table-hover table-light">
+    <thead class="thead-light text-center">
+      <tr>
+        <th scope="col"><%= t('stocks.code') %></th>
+        <th scope="col"><%= t('stocks.name') %></th>
+        <th scope="col"><%= t('stocks.registrationVolume') %></th>
+        <th scope="col"><%= t('stocks.outstandingVolume') %></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @stocks.each do |stock| %>
+        <tr>
+          <td scope="row" class="text-center"><%= stock.code %></td>
+          <td scope="row"><%= stock.name %></td>
+          <td scope="row" class="text-right"><%= number_with_delimiter(stock.registrationVolume) %></td>
+          <td scope="row" class="text-right"><%= number_with_delimiter(stock.outstandingVolume) %></td>
+          <td scope="row"><%= link_to 'Show', stock, class: "btn btn-sm btn-primary" %></td>
+          <td scope="row"><%= link_to 'Edit', edit_stock_path(stock), class: "btn btn-sm btn-primary" %></td>
+          <td scope="row"><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-secondary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to t('newStock'), new_stock_path, class: "btn btn-primary" %>
+</div>
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+    $('#stocksListTable').DataTable({
+      "pageLength": 25,
+      "order": [ [3, "desc"] ],
+      "columnDefs": [ {
+        "orderable": false, "targets": [4,5,6]
+      } ]
+    });
+  });
+</script>

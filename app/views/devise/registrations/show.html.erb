@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6 bg-light">
+    <h2><%= t('accountInfo') %></h2>
+
+    <div class="field form-group row">
+      <div class="col-md-3 col-form-label font-weight-bold"><%= t('username') %></div>
+      <div class="col-md-9 col-form-label"><%= @user.username %></div>
+    </div>
+    <div class="field form-group row">
+      <div class="col-md-3 col-form-label font-weight-bold"><%= t('fullname') %></div>
+      <div class="col-md-9 col-form-label"><%= @user.fullname %></div>
+    </div>
+    <div class="field form-group row">
+      <div class="col-md-3 col-form-label font-weight-bold"><%= t('email') %></div>
+      <div class="col-md-9 col-form-label"><%= @user.email %></div>
+    </div>
+    <div class="field form-group row">
+      <div class="col-md-3 col-form-label font-weight-bold"><%= t('phone') %></div>
+      <div class="col-md-9 col-form-label"><%= @user.phone %></div>
+    </div>
+    <div class="field form-group row">
+      <div class="col-md-3 col-form-label font-weight-bold"><%= t('birthday') %></div>
+      <div class="col-md-9 col-form-label"><%= @user.birthday %></div>
+    </div>
+    <div class="field form-group row">
+      <div class="col-md-3 col-form-label font-weight-bold"><%= t('sex') %></div>
+      <div class="col-md-9 col-form-label"><%= @user.sex %></div>
+    </div>
+    <div class="field form-group row">
+      <div class="col-md-3 col-form-label font-weight-bold"><%= t('role') %></div>
+      <div class="col-md-9 col-form-label"><%= @user.role %></div>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>

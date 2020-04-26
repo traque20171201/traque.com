@@ -1,0 +1,6 @@
+<% if current_user %>
+  <p><%= t('login.success', username: current_user.fullname) %></p>
+<% else %>
+  <p><%= t('welcome') %></p>
+  <%= link_to  t('signup'), new_user_registration_path, class: 'btn btn-large btn-success' %>
+<% end %>

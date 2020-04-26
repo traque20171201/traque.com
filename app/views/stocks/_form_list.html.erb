@@ -1,0 +1,58 @@
+<%= form_for user, url: stocks_new_list_path do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this stock from being saved:</h2>
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <table id="stocksList" class="table table-bordered table-hover table-light">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">
+          <span id="addNew" class="flag-icon add-row" title="Thêm mới một dòng"></span>
+        </th>
+        <th scope="col">Code</th>
+        <th scope="col">Name</th>
+        <th scope="col">Registration volume</th>
+        <th scope="col">Outstanding volume</th>
+        <th scope="col">Website</th>
+        <th scope="col">Industry</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= form.fields_for :stocks do |stocks_form| %>
+        <tr>
+          <td scope="row">
+            <span class="flag-icon delete-row" title="Xóa dòng hiện tại"></span>
+          </td>
+          <td scope="row">
+            <%= stocks_form.text_field :code, class: "form-control" %>
+          </td>
+          <td scope="row">
+            <%= stocks_form.text_field :name, class: "form-control" %>
+          </td>
+          <td scope="row">
+            <%= stocks_form.text_field :registrationVolume, class: "form-control" %>
+          </td>
+          <td scope="row">
+            <%= stocks_form.text_field :outstandingVolume, class: "form-control" %>
+          </td>
+          <td scope="row">
+            <%= stocks_form.text_field :website, class: "form-control" %>
+          </td>
+          <td scope="row">
+            <%= stocks_form.text_field :industry, class: "form-control" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+    <%= link_to 'Back', stocks_path, class: "btn btn-secondary" %>
+  </div>
+<% end %>

@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item <%= 'active' if controller_name=='home' %>">
+        <%= link_to  t('home'), root_path, class: 'nav-link' %>
+      </li>
+      <% if current_user %>
+        <li class="nav-item dropdown <%= 'active' if controller_name=='buysells' %>">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTransaction" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= t('transaction') %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownTransaction">
+            <%= link_to  t('transactionlist'), trades_path, class: 'dropdown-item' %>
+            <div class="dropdown-divider"></div>
+            <%= link_to  t('inputone'), new_trade_path, class: 'dropdown-item' %>
+            <%= link_to  t('inputlist'), new_trade_path, class: 'dropdown-item' %>
+            <div class="dropdown-divider"></div>
+            <%= link_to  t('stockrequest'), root_path, class: 'dropdown-item' %>
+          </div>
+        </li>
+        <% if current_user.admin? %>
+          <li class="nav-item dropdown <%= 'active' if controller_name=='stocks' %>">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownStock" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= t('stock') %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownStock">
+              <%= link_to  t('stocklist'), stocks_path, class: 'dropdown-item' %>
+              <div class="dropdown-divider"></div>
+              <%= link_to  t('inputone'), new_stock_path, class: 'dropdown-item' %>
+              <%= link_to  t('inputlist'), stocks_new_list_path, class: 'dropdown-item' %>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <% if current_user %>
+        <ul class="navbar-nav mr-auto my-2 my-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= current_user.fullname %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownUser">
+              <%= link_to  t('profile'), users_show_path, class: 'dropdown-item' %>
+              <%= link_to  t('changePassword'), edit_user_registration_path, class: 'dropdown-item' %>              
+              <div class="dropdown-divider"></div>
+              <%= link_to t('signout'), destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+            </div>
+          </li>
+        </ul>
+      <% else %>
+        <%= link_to t('signin'), new_user_session_path, class: 'btn btn-large btn-primary' %>
+      <% end %>
+    </form>
+  </div>
+</nav>

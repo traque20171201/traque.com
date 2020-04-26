@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t('title') %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <div class="header">
+      <div class="container">
+        <%= render "shared/header" %>
+      </div>
+    </div>
+    <!-- Menu -->
+    <div class="menu">
+      <div class="container">
+        <%= render "shared/menu" %>
+      </div>
+    </div>
+    <!-- Main -->
+    <div class="main">
+      <div class="container">
+        <% if !notice.nil? %>
+          <p class="notice alert alert-info"><%= notice %></p>
+        <% end %>
+        <% if !alert.nil? %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+        <%= yield %>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <p>© 2020 Traque.com, Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+  </body>
+</html>

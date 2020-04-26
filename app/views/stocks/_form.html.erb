@@ -1,0 +1,60 @@
+<%= form_with(model: stock, local: true) do |form| %>
+  <% if stock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stock.errors.count, "error") %> prohibited this stock from being saved:</h2>
+
+      <ul>
+        <% stock.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group row">
+    <%= form.label :code, class: "col-md-3 col-form-label font-weight-bold" %>
+    <div class="col-md-9">
+      <%= form.text_field :code, required: true, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :name, class: "col-md-3 col-form-label font-weight-bold" %>
+    <div class="col-md-9">
+      <%= form.text_field :name, required: true, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :registrationVolume, class: "col-md-3 col-form-label font-weight-bold" %>
+    <div class="col-md-9">
+      <%= form.text_field :registrationVolume, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :outstandingVolume, class: "col-md-3 col-form-label font-weight-bold" %>
+    <div class="col-md-9">
+      <%= form.text_field :outstandingVolume, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :website, class: "col-md-3 col-form-label font-weight-bold" %>
+    <div class="col-md-9">
+      <%= form.text_field :website, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :industry, class: "col-md-3 col-form-label font-weight-bold" %>
+    <div class="col-md-9">
+      <%= form.text_field :industry, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+    <%= link_to 'Back', stocks_path, class: "btn btn-secondary" %>
+  </div>
+<% end %>

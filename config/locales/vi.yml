@@ -1,0 +1,84 @@
+vi:
+  title: "Hệ thống quản lý danh mục đầu tư chứng khoán"
+  website: "Traque.com"
+  home: "Trang chủ"
+  transaction: "Giao dịch chứng khoán"
+  transactionlist: "Danh sách giao dịch"
+  stock: "Chứng khoán"
+  stocklist: "Danh sách cổ phiếu"
+  inputone: "Nhập riêng lẻ"
+  inputlist: "Nhập tập chung"
+  stockrequest: "Yêu cầu thêm mới cổ phiếu"
+  welcome: "Chào mừng tới hệ thống quản lý danh mục đầu tư. Để có thể bắt đầu thì hãy đăng ký."
+  signin: "Đăng Nhập"
+  signup: "Đăng Ký"
+  signout: "Đăng Xuất"
+  login:
+    submit: "Đăng nhập"
+    success: "Đăng nhập thành công bởi, %{username}"
+  helpers:
+    submit:
+      create: "Tạo Mới"
+      update: "Cập Nhật"
+  password_confirmation: "Xác nhận mật khẩu"
+  current_password: "Mật khẩu hiện tại"
+  account: "Tên người dùng, email hoặc số điện thoại"
+  password: "Mật khẩu"
+  email: "Email"
+  forgotPassword: "Quên mật khẩu?"
+  notReceiveConfirmation: "Không nhận được hướng dẫn xác nhận?"
+  notReceiveUnlock: "Không nhận được hướng dẫn mở khóa?"
+  sendResetPassword: "Gửi hướng dẫn thiết lập lại mật khẩu"
+  resendConfirmation: "Gửi lại hướng dẫn xác nhận"
+  resendUnlock: "Gửi lại hướng dẫn mở khóa"
+  profile: "Tài khoản"
+  changePassword: "Thay đổi mật khẩu"
+  cancelMyAccount: "Hủy tài khoản của tôi"
+  unhappy: "Không vui vẻ?"
+  accountInfo: "Thông tin tài khoản"
+  error:
+    sign_in: "Bạn cần phải đăng nhập"
+    permission: "Bạn không có quyền truy cập"
+  newStock: "Tạo mới chứng khoán"
+  editStock: "Chỉnh sửa chứng khoán"
+  stocksList: "Danh sách chứng khoán"
+  stocks:
+    code: "Mã CK"
+    name: "Tên công ty"
+    registrationVolume: "Khối lượng đăng ký"
+    outstandingVolume: "Khối lượng lưu hành"
+    website: "Website"
+    industry: "Ngành nghề"
+  activerecord:
+    errors:
+      models:
+        user:
+          email: "Email"
+          password: "Mật khẩu"
+          username: "Tài khoản"
+          firstname: "Họ"
+          lastname: "Tên"
+          attributes:
+            username:
+              blank: "Tài khoản không thể là rỗng"
+            email:
+              blank: "Email không thể là rỗng"
+            password:
+              blank: "Mật khẩu không thể là rỗng"
+              too_short: "Mật khẩu phải từ 8 ký tự trở lên"
+              invalid: "Mật khẩu không hợp lệ"
+            firstname:
+              blank: "Họ không thể là rỗng"
+            lastname:
+              blank: "Tên không thể là rỗng"
+        stock:
+          code: "Mã chứng khoán"
+          name: "Tên công ty"
+          attributes:
+            code:
+              taken: "Mã chứng khoán không được lấy"
+              blank: "Mã chứng khoán không thể là rỗng"
+            name:
+              blank: "Tên công ty không thể là rỗng"
+  buy: "Mua"
+  sell: "Bán"

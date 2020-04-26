@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-8 bg-light">
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong><%= t('stocks.code') %>:</strong>
+      <%= @stock.code %>
+    </p>
+
+    <p>
+      <strong><%= t('stocks.name') %>:</strong>
+      <%= @stock.name %>
+    </p>
+
+    <p>
+      <strong><%= t('stocks.registrationVolume') %>:</strong>
+      <%= number_with_delimiter(@stock.registrationVolume) %>
+    </p>
+
+    <p>
+      <strong><%= t('stocks.outstandingVolume') %>:</strong>
+      <%= number_with_delimiter(@stock.outstandingVolume) %>
+    </p>
+
+    <p>
+      <strong><%= t('stocks.website') %>:</strong>
+      <%= link_to(nil, @stock.website) %>
+    </p>
+
+    <p>
+      <strong><%= t('stocks.industry') %>:</strong>
+      <%= @stock.industry %>
+    </p>
+
+    <%= link_to 'Edit', edit_stock_path(@stock), class: "btn btn-primary" %>
+    <%= link_to 'Back', stocks_path, class: "btn btn-secondary" %>
+      </div>
+  <div class="col-md-4"></div>
+</div>

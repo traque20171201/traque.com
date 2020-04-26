@@ -1,0 +1,84 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  title: "Investment Stock Portfolio Management System"
+  website: "Traque.com"
+  home: "Home"
+  transaction: "Stock transaction"
+  transactionlist: "Transaction list"
+  stock: "Stock"
+  stocklist: "Stock list"
+  inputone: "Input one"
+  inputlist: "Input list"
+  stockrequest: "Stock add request"
+  welcome: "Welcome to the Investment Portfolio Management System! Get started quickly by signing up."
+  signin: "Sign In"
+  signup: "Sign Up"
+  signout: "Sign Out"
+  login:
+    submit: "Log in"
+    success: "You are Logged In, %{username}"
+  helpers:
+    submit:
+      create: "Create"
+      update: "Update"
+  password_confirmation: "Password Confirmation"
+  current_password: "Current Password"
+  account: "Username, Email or Phone"
+  password: "Password"
+  email: "Email"
+  forgotPassword: "Forgot your password?"
+  notReceiveConfirmation: "Didn't receive confirmation instructions?"
+  notReceiveUnlock: "Didn't receive unlock instructions?"
+  sendResetPassword: "Send me reset password instructions"
+  resendConfirmation: "Resend confirmation instructions"
+  resendUnlock: "Resend unlock instructions"
+  profile: "Profile"
+  changePassword: "Change Password"
+  cancelMyAccount: "Cancel my account"
+  unhappy: "Unhappy?"
+  accountInfo: "Account information"
+  error:
+    sign_in: "You need to sign in"
+    permission: "You don't permission to access"
+  newStock: "New Stock"
+  editStock: "Editing Stock"
+  stocksList: "Stocks List"
+  stocks:
+    code: "Stock code"
+    name: "Company name"
+    registrationVolume: "Registration volume"
+    outstandingVolume: "Outstanding volume"
+    website: "Website"
+    industry: "Industry"
+  buy: "Buy"
+  sell: "Sell"

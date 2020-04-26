@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tradingdate:</strong>
+  <%= @trade.tradingDate %>
+</p>
+
+<p>
+  <strong>Tradingtype:</strong>
+  <%= @trade.tradingType %>
+</p>
+
+<p>
+  <strong>Volume:</strong>
+  <%= @trade.volume %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @trade.price %>
+</p>
+
+<p>
+  <strong>Money:</strong>
+  <%= @trade.money %>
+</p>
+
+<p>
+  <strong>Fee:</strong>
+  <%= @trade.fee %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @trade.tax %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @trade.user_id %>
+</p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @trade.stock_id %>
+</p>
+
+<%= link_to 'Edit', edit_trade_path(@trade) %> |
+<%= link_to 'Back', trades_path %>

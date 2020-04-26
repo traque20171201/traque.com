@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-9">            
+    <%= link_to root_path do %>
+      <%= content_tag :span, t('website'), class: 'logo' %>
+    <% end %>
+  </div>
+  <div class="col-md-3 text-right">
+    <% if I18n.locale.to_s != 'vi' %>
+      <a href="/vi" id="icon-language-vi"><span class="flag-icon flag-icon-vn"></span></a>
+    <% end %>
+    <% if I18n.locale.to_s != 'en' %>
+      <a href="/en" id="icon-language-en"><span class="flag-icon flag-icon-us"></span></a>
+    <% end %>
+  </div>
+</div>
