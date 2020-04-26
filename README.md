@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# traque.com
+Ruby on Rails 6.0.2.2
+>>>>>>> b740f9f7981420f0c277f3cd00fa4a9a3cf03862
