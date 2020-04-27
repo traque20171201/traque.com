@@ -1,0 +1,45 @@
+vi:
+  activerecord:
+    attributes:
+      user:
+        sexes:
+          male: "Nam"
+          female: "Nữ"
+        roles:
+          user: "Thành viên"
+          manager: "Quản lý"
+          admin: "Quản trị viên"
+      trade:
+        tradingTypes:
+          buy: "Mua"
+          sell: "Bán"
+    errors:
+      models:
+        user:
+          email: "Email"
+          password: "Mật khẩu"
+          username: "Tài khoản"
+          firstname: "Họ"
+          lastname: "Tên"
+          attributes:
+            username:
+              blank: "Tài khoản không thể là rỗng"
+            email:
+              blank: "Email không thể là rỗng"
+            password:
+              blank: "Mật khẩu không thể là rỗng"
+              too_short: "Mật khẩu phải từ 8 ký tự trở lên"
+              invalid: "Mật khẩu không hợp lệ"
+            firstname:
+              blank: "Họ không thể là rỗng"
+            lastname:
+              blank: "Tên không thể là rỗng"
+        stock:
+          code: "Mã chứng khoán"
+          name: "Tên công ty"
+          attributes:
+            code:
+              taken: "Mã chứng khoán không được lấy"
+              blank: "Mã chứng khoán không thể là rỗng"
+            name:
+              blank: "Tên công ty không thể là rỗng"

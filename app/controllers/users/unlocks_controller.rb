@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::UnlocksController < Devise::UnlocksController
+  skip_before_action :authorized, only: [:new, :create, :show]
   # GET /resource/unlock/new
   # def new
   #   super

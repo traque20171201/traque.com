@@ -1,0 +1,15 @@
+en:
+  activerecord:
+  attributes:
+    user:
+      sexes:
+        male: "Male"
+        female: "Female"
+      roles:
+        user: "User"
+        manager: "Manager"
+        admin: "Administrator"
+    trade:
+      tradingTypes:
+        buy: "Buy"
+        sell: "Sell"

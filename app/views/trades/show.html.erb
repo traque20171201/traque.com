@@ -7,7 +7,7 @@
 
 <p>
   <strong>Tradingtype:</strong>
-  <%= @trade.tradingType %>
+  <%= Trade.human_enum_name(:tradingType, @trade.tradingType) %>
 </p>
 
 <p>

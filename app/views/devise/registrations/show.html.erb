@@ -25,11 +25,11 @@
     </div>
     <div class="field form-group row">
       <div class="col-md-3 col-form-label font-weight-bold"><%= t('sex') %></div>
-      <div class="col-md-9 col-form-label"><%= @user.sex %></div>
+      <div class="col-md-9 col-form-label"><%= User.human_enum_name(:sex, @user.sex) %></div>
     </div>
     <div class="field form-group row">
       <div class="col-md-3 col-form-label font-weight-bold"><%= t('role') %></div>
-      <div class="col-md-9 col-form-label"><%= @user.role %></div>
+      <div class="col-md-9 col-form-label"><%= User.human_enum_name(:role, @user.role) %></div>
     </div>
   </div>
   <div class="col-md-3"></div>
