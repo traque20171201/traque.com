@@ -64,11 +64,10 @@
 
       <div class="field form-group row">
         <%= f.label :sex, class: "col-md-3 col-form-label font-weight-bold" %>
-        <div class="col-md-9">
-          <%= f.radio_button :sex, 1 %>
-          <%= label_tag(:sex_1, t('male')) %>
-          <%= f.radio_button :sex, 2 %>
-          <%= label_tag(:sex_2, t('female')) %>
+        <div class="col-md-3">
+          <%= f.select :sex, User.sexes.keys.map { |k| [I18n.t("activerecord.attributes.user.sexes.#{k}"), k] }, {}, {:class => "form-control"} %>
+        </div>
+        <div class="col-md-6">
         </div>
       </div>
 

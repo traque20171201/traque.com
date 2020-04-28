@@ -34,7 +34,7 @@
   <div class="field form-group row">
     <%= form.label :tradingType, class: "col-md-3 col-form-label font-weight-bold" %>
     <div class="col-md-2">
-      <%= form.select(:tradingType, [[t('buy'), 1],[t('sell'), 2]], {}, {:class => "form-control"}) %>
+      <%= form.select :tradingType, Trade.tradingTypes.keys.map { |k| [I18n.t("activerecord.attributes.trade.tradingTypes.#{k}"), k] }, {}, {:class => "form-control"} %>
     </div>
     <div class="col-md-7">
     </div>
