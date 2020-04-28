@@ -4,6 +4,7 @@
     <thead class="thead-light text-center">
       <tr>
         <th scope="col">Tradingdate</th>
+        <th scope="col">Stock</th>
         <th scope="col">Tradingtype</th>
         <th scope="col">Volume</th>
         <th scope="col">Price</th>
@@ -16,7 +17,8 @@
       <% @trades.each do |trade| %>
         <tr>
           <td scope="row" class="text-center"><%= trade.tradingDate %></td>
-          <td scope="row"><%= trade.tradingType %></td>
+          <td scope="row" class="text-center"><%= trade.code %></td>
+          <td scope="row"><%= Trade.human_enum_name(:tradingType, trade.tradingType) %></td>
           <td scope="row" class="text-right"><%= number_with_delimiter(trade.volume) %></td>
           <td scope="row" class="text-right"><%= number_with_delimiter(trade.price) %></td>
           <td scope="row" class="text-right"><%= number_with_delimiter(trade.money) %></td>

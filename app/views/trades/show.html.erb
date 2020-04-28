@@ -6,44 +6,39 @@
 </p>
 
 <p>
+  <strong>Stock:</strong>
+  <%= @trade.code %>
+</p>
+
+<p>
   <strong>Tradingtype:</strong>
   <%= Trade.human_enum_name(:tradingType, @trade.tradingType) %>
 </p>
 
 <p>
   <strong>Volume:</strong>
-  <%= @trade.volume %>
+  <%= number_with_delimiter(@trade.volume) %>
 </p>
 
 <p>
   <strong>Price:</strong>
-  <%= @trade.price %>
+  <%= number_with_delimiter(@trade.price) %>
 </p>
 
 <p>
   <strong>Money:</strong>
-  <%= @trade.money %>
+  <%= number_with_delimiter(@trade.money) %>
 </p>
 
 <p>
   <strong>Fee:</strong>
-  <%= @trade.fee %>
+  <%= number_with_delimiter(@trade.fee) %>
 </p>
 
 <p>
   <strong>Tax:</strong>
-  <%= @trade.tax %>
+  <%= number_with_delimiter(@trade.tax) %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @trade.user_id %>
-</p>
-
-<p>
-  <strong>Stock:</strong>
-  <%= @trade.stock_id %>
-</p>
-
-<%= link_to 'Edit', edit_trade_path(@trade) %> |
-<%= link_to 'Back', trades_path %>
+<%= link_to 'Edit', edit_trade_path(@trade), class: "btn btn-secondary" %>
+<%= link_to 'Back', trades_path, class: "btn btn-primary" %>
