@@ -1,0 +1,58 @@
+<%= form_for user, url: trades_new_list_path do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this trade from being saved:</h2>
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <table id="tradesList" class="table table-bordered table-hover table-light">
+    <thead class="thead-light">
+    <tr>
+      <th scope="col">
+        <span id="addNew" class="flag-icon add-row" title="Thêm mới một dòng"></span>
+      </th>
+      <th scope="col">Date</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Type</th>
+      <th scope="col">Volume</th>
+      <th scope="col">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= form.fields_for :trades do |trades_form| %>
+      <tr>
+        <td scope="row">
+          <span class="flag-icon delete-row" title="Xóa dòng hiện tại"></span>
+        </td>
+        <td scope="row">
+          <%= trades_form.date_field :tradingDate, class: "form-control" %>
+        </td>
+        <td scope="row">
+          <%= trades_form.select(:stock_id, [], {}, {:class => "form-control"}) do %>
+            <% @stocks.each do |stock| %>
+              <%= content_tag(:option, stock.code, value: stock.id, title: stock.name) %>
+            <% end %>
+          <% end %>
+        </td>
+        <td scope="row">
+          <%= trades_form.select :tradingType, Trade.tradingTypes.keys.map { |k| [I18n.t("activerecord.attributes.trade.tradingTypes.#{k}"), k] }, {}, {:class => "form-control"} %>
+        </td>
+        <td scope="row">
+          <%= trades_form.text_field :volume, class: "form-control" %>
+        </td>
+        <td scope="row">
+          <%= trades_form.text_field :price, class: "form-control" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+    <%= link_to 'Back', trades_path, class: "btn btn-secondary" %>
+  </div>
+<% end %>

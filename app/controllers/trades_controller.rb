@@ -17,6 +17,13 @@ class TradesController < ApplicationController
     @trade = Trade.new
   end
 
+  # GET /trades/new/list
+  def new_list
+    @user = User.new
+    @stocks = Stock.all
+    5.times { @user.trades.build }
+  end
+
   # GET /trades/1/edit
   def edit
   end
@@ -42,6 +49,31 @@ class TradesController < ApplicationController
         format.html { render :new }
         format.json { render json: @trade.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  # POST /list/trades
+  # POST /list/trades.json
+  def create_list
+    @user = User.new(user_params)
+    respond_to do |format|
+      for trade in @user.trades do
+        if !trade.tradingDate.nil?
+          trade.user_id = current_user.id
+          trade.money = trade.volume * trade.price
+          trade.fee = trade.money * 0.0015
+          if trade.tradingType == 2 #Sell have tax
+            trade.tax = trade.money * 0.0010
+          else
+            trade.tax = 0
+          end
+          if !trade.save
+            flash[:alert] = 'An error occurred, please try again later.'
+            format.html { render :new_list }
+          end
+        end
+      end
+      format.html { redirect_to trades_url, notice: 'Trades was successfully created.' }
     end
   end
 
@@ -81,5 +113,10 @@ class TradesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def trade_params
       params.require(:trade).permit(:tradingDate, :tradingType, :volume, :price, :stock_id)
+    end
+
+    # Trade list via user
+    def user_params
+      params.require(:user).permit(trades_attributes: [:tradingDate, :stock_id, :tradingType, :volume, :price])
     end
 end

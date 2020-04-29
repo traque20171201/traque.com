@@ -16,5 +16,7 @@ Rails.application.routes.draw do
     get 'stocks/new/list', to: 'stocks#new_list'
     post 'stocks/new/list', to: 'stocks#create_list'
     resources :trades
+    get 'trades/new/list', to: 'trades#new_list'
+    post 'trades/new/list', to: 'trades#create_list'
   end
 end

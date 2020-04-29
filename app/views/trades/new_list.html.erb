@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="col-md-12 bg-light">
+    <h2><%= t('newTrade') %></h2>
+    <%= render 'form_list', user: @user %>
+    <%= javascript_pack_tag 'trade' %>
+  </div>
+</div>

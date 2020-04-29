@@ -66,6 +66,7 @@ class StocksController < ApplicationController
       end
     end
   end
+
   # PATCH/PUT /stocks/1
   # PATCH/PUT /stocks/1.json
   def update
